@@ -48,10 +48,15 @@
 </div>
 
 <div class="d-flex m-2 border-bottom border-light">
-  <label for="categoria" class="font-italic font-weight-bold text-light">Categoria: </label>
-<input type="text" name="categoria" id="categoria" placeholder="" class="form-control ml-2 mb-2">
+  <label for="categoria_id" class="font-italic font-weight-bold text-light">Categoria: </label>
+<select name="categoria_id" class="form-control d-block">
+  <option selected disabled>--Seleccionar--</option>
+  @foreach($categoria as $category)  
+  <option class="text-capitalize" value="{{$category->id}}">{{$category->nombre}}</option>
+  @endforeach
+  </select>
 
-{!! $errors->first('categoria', '<small>:message</small><br>') !!}
+{!! $errors->first('categoria_id', '<small>:message</small><br>') !!}
 </div>
 <br>
   

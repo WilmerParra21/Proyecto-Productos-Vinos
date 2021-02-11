@@ -5,12 +5,12 @@
 
 @section('content_header')
 
-<h1 class="text-center text-capitalize border-bottom border-dark text-danger">Productos disponibles</h1>
+<h1 class="text-center text-capitalize border-bottom border-dark bg-purple p-2">Productos disponibles</h1>
 @stop
 
 @section('content')
 
-<p class=" margin-2 p-4 shadow"></p>
+<p class="p-4 shadow"></p>
 
 <div class="container-xl">
 
@@ -49,7 +49,7 @@
 
 <h3 class="text-center text-capitalize text-danger py-2 pl-3" style="background-color: black; border-radius: 5px">destacados</h3>
 
-<section class="d-flex justify-content-center mt-3" style="background-color: black">
+<section class="d-flex justify-content-center" style="background-color: black">
 <article class="card w-100 m-2 border border-light bg-transparent">
 <div class="d-flex justify-content-between">
       <img src="{{asset('img/productos/Wine_Black_background_Bottle_Stemware_512316_2560x1846.jpg')}}" width="500" class="d-block img-fluid" width="148" alt="...">

@@ -14,9 +14,10 @@ class AddCategoriaIdToProductosTable extends Migration
     public function up()
     {
         Schema::table('productos', function (Blueprint $table) {
-        $table->unsignedBigInteger('categoria_id')->after('stock');
+            $table->unsignedBigInteger('categoria_id')->after('stock');
 
-        $table->foreign('categoria_id')->references('id')->on('categoria');
+            $table->foreign('categoria_id')->references('id')->on('categorias');
+         
         });
     }
 

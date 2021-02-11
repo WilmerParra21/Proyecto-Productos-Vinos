@@ -6,7 +6,7 @@
 
 @section('content_header')
 
-<h1 class="text-center text-capitalize text-dark p-2 shadow" style="background-color: yellow; font-family: Georgia, serif;">Detalle del Producto</h1>
+<h1 class="text-center text-capitalize text-white p-2 shadow" style="background-color: darkred; font-family: Georgia, serif;">Detalle del Producto</h1>
 @stop
 
 @section('content')
@@ -15,23 +15,23 @@
 
 <ul class="list-unstyled m-3">
 
-	<li class="">Nombre: <strong class="text-danger font-weight-bold">{{$producto->nombre_Prod}}</strong></li>
+	<li class="">Nombre: <strong class="text-dark font-weight-bold">{{$producto->nombre_Prod}}</strong></li>
 
-	<li class="">Descripción: <strong class="text-danger font-weight-bold">{{$producto->descripcion}}</strong></li>
+	<li class="">Descripción: <strong class="text-dark font-weight-bold">{{$producto->descripcion}}</strong></li>
 
 	<li class="">Precio: <strong class="text-success font-weight-bold">{{$producto->precio}}$</strong></li>
 
-	<li class="">Stock: <strong class="text-danger font-weight-bold">{{$producto->stock}}</strong></li>
+	<li class="">Stock: <strong class="text-dark font-weight-bold">{{$producto->stock}}</strong></li>
 
-	<li class="">Categoria: <strong class="text-danger font-weight-bold">{{$producto->categoria}}</strong></li>
+	<li class="">Categoria: <strong class="text-dark font-weight-bold">{{$producto->categorias->nombre}}</strong></li>
 
-	<li class=" text-capitalize mt-4">Fecha de Creación: <strong class="text-danger font-weight-bold">{{$producto->created_at}}</strong></li>
+	<li class=" text-capitalize mt-4">Fecha de Creación: <strong class="text-dark font-weight-bold">{{$producto->created_at}}</strong></li>
 
-	<li class="text-capitalize">Fecha de Actualización: <strong class="text-danger font-weight-bold">{{$producto->updated_at}}</strong></li>
+	<li class="text-capitalize">Fecha de Actualización: <strong class="text-dark font-weight-bold">{{$producto->updated_at}}</strong></li>
 </ul>
 
 <div class="m-4 py-2">
-		<a href="{{route('admin.lista')}}" class="btn btn-outline-dark">volver</a>
+		<a href="{{route('admin.lista')}}" class="btn btn-outline-dark px-3">volver</a>
 	</div>
 	
 </div>

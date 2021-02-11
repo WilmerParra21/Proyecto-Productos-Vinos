@@ -19,11 +19,11 @@
 
 	<li class="">Stock: <strong class="font-weight-bold">{{$producto->stock}}</strong></li>
 
-	<li class="">Categoria: <strong class="font-weight-bold">{{$producto->categoria}}</strong></li>
+	<li class="">Categoria: <strong class="font-weight-bold">{{$producto->categorias->nombre}}</strong></li>
 
 </ul>
 
-<img src="{{asset('storage').'/'.$producto->imagen}}" width="280" class="m-5">
+<img src="{{asset($producto).'/'.$producto->imagen}}" width="280" class="m-5 img-fluid">
 </div>
 <div class="m-4 py-2">
 		<a href="{{route('admin.index')}}" class="btn btn-outline-dark px-4">Volver</a>

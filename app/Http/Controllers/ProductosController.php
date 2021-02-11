@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductoPost;
 use App\Models\Productos;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
@@ -24,7 +25,8 @@ class ProductosController extends Controller
 
     public function create()
     {
-        return view('admin.agregar');
+        $categoria = Categoria::all();
+        return view('admin.agregar', compact('categoria'));
     }
 
 //  request  / validar 
@@ -52,8 +54,9 @@ $producto->save();
     public function editarProd($id)
     {
         $producto = Productos::find($id);
+        $categoria = Categoria::all();
 
-        return view('admin.editar', compact('producto'));
+        return view('admin.editar', compact('producto', 'categoria'));
     }
 
 

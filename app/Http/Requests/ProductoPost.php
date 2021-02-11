@@ -28,7 +28,7 @@ class ProductoPost extends FormRequest
         'descripcion' => 'required|max:50',
         'precio' => 'required',
         'stock' => 'required|numeric',
-        'categoria' => 'required|max:20',
+        'categoria_id' => 'required',
         'imagen' => 'required'
         ];
     }

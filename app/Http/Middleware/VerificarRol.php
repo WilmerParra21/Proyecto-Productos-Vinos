@@ -18,8 +18,8 @@ class VerificarRol
     
     $rols = array_slice(func_get_args(), 2);
 
-    if (auth()->user()->hasRol($rols)){
-      
+    if(auth()->user()->hasRol($rols)){
+  
       return $next($request);
     }
         return redirect('/');

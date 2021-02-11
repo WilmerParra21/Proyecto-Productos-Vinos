@@ -71,7 +71,7 @@
 	
 	<td class="text-center">{{$prod->stock}}</td>
 	
-	<td class="text-center">{{$prod->categoria}}</td>
+	<td class="text-center">{{$prod->categorias->nombre}}</td>
 	
 	<td class="text-center text-capitalize">{{$prod->created_at->diffforHumans()}}</td>
 	<td>
