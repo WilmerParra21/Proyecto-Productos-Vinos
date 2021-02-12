@@ -23,7 +23,7 @@
 
 </ul>
 
-<img src="{{asset($producto).'/'.$producto->imagen}}" width="280" class="m-5 img-fluid">
+<img src="{{asset('storage').'/'.$producto->imagen}}" width="280" class="m-5 img-fluid">
 </div>
 <div class="m-4 py-2">
 		<a href="{{route('admin.index')}}" class="btn btn-outline-dark px-4">Volver</a>

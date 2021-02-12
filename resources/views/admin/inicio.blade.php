@@ -22,7 +22,7 @@
 <article class="card w-100 m-2 border border-dark">
 <div class="d-flex justify-content-between">
       
-  <img src="{{asset('storage').'/'.$prod->imagen}}" width="190" class="d-block img-fluid" width="148" alt="Producto">
+  <img src="{{Storage::url($prod->imagen)}}" width="190" class="d-block img-fluid" width="148" alt="Producto">
 
     <div class="text-center pt-5 mr-4">
 <p class="mb-2 text-muted text-uppercase font-weight-bold small">{{$prod->nombre_Prod}}</p>
