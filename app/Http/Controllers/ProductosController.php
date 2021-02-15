@@ -62,13 +62,15 @@ $producto->save();
 
     public function actualizarProd(ProductoPost $request, $id)
     {
+
         $producto = Productos::find($id);
-       
+
       if($request->hasFile('imagen')){
         
         $producto['imagen']=$request->file('imagen')->store('public');
         }
-        $producto->update($request->validated());
+
+    $producto->update($request->validated());
 
         return redirect()->route('admin.lista')->with('modificar', 'Se ha Actualizado Correctamente');
     }

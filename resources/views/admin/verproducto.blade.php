@@ -8,27 +8,33 @@
 @stop
 
 @section('content')
-
-<div class="container-fluid border border-dark ">
+<div style="background-image: url('../img/fond-1.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+">
+<div class="container-fluid border border-dark" style="background-color: rgba(255, 255, 255, .6);">
 <div class="d-flex">
-<ul class="list-unstyled m-3">
+<ul class="list-unstyled m-3 mt-5">
 
-	<li class="">Descripción: <strong class=" font-weight-bold">{{$producto->descripcion}}</strong></li>
+	<li class="m-2"><i class="fas fa-file-alt mr-2"></i> Descripción: <strong class=" font-weight-bold font-italic">{{$producto->descripcion}}</strong></li>
 
-	<li class="">Precio: <strong class="text-success font-weight-bold">{{$producto->precio}}$</strong></li>
+	<li class="m-2"><i class="fas fa-coins mr-2"></i>
+ Precio: <strong class="font-weight-bold">{{$producto->precio}}$</strong></li>
 
-	<li class="">Stock: <strong class="font-weight-bold">{{$producto->stock}}</strong></li>
+	<li class="m-2"><i class="far fa-heart mr-2"></i>
+	 Stock: <strong class="font-weight-bold">{{$producto->stock}}</strong></li>
 
-	<li class="">Categoria: <strong class="font-weight-bold">{{$producto->categorias->nombre}}</strong></li>
+	<li class="m-2 pb-4 border-bottom border-dark"><i class="far fa-address-card mr-2"></i> Categoria: <strong class="font-weight-bold">{{$producto->categorias->nombre}}</strong></li>
 
 </ul>
 
-<img src="{{asset('storage').'/'.$producto->imagen}}" width="280" class="m-5 img-fluid">
+<img src="{{asset(Storage::url($producto->imagen))}}" width="280" class="mt-2 mr-5 img-fluid shadow" alt="Imagen-Vino">
 </div>
-<div class="m-4 py-2">
-		<a href="{{route('admin.index')}}" class="btn btn-outline-dark px-4">Volver</a>
+<p class="mt-2 mr-5 text-primary font-weight-bold float-right">Viñedo<strong class=" font-italic text-light">Coste</strong></p>
+
+		<a href="{{route('admin.index')}}" class="ml-3 mb-5 btn btn-outline-dark px-4 text-light">Volver</a>
 	</div>
-	
+	</div>
 </div>
 
 @stop
@@ -37,6 +43,8 @@
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+
+  <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   
@@ -44,6 +52,9 @@
 @stop
 
 @section('js')
+
+<script src="{{asset('js/all.min.js')}}"></script>
+
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

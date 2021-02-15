@@ -47,9 +47,9 @@
 {!! $errors->first('stock', '<small>:message</small><br>') !!}
 </div>
 
-<div class="d-flex m-2 border-bottom border-light">
+<div class="d-flex m-2 pb-3 border-bottom border-light">
   <label for="categoria_id" class="font-italic font-weight-bold text-light">Categoria: </label>
-<select name="categoria_id" class="form-control d-block">
+<select name="categoria_id" class="ml-1 form-control d-block">
   <option selected disabled>--Seleccionar--</option>
   @foreach($categoria as $category)  
   <option class="text-capitalize" value="{{$category->id}}">{{$category->nombre}}</option>

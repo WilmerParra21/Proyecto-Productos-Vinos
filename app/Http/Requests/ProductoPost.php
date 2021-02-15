@@ -29,7 +29,7 @@ class ProductoPost extends FormRequest
         'precio' => 'required',
         'stock' => 'required|numeric',
         'categoria_id' => 'required',
-        'imagen' => 'required'
+       
         ];
     }
 }

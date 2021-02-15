@@ -30,22 +30,22 @@
 @if(Session::has('eliminar'))
 
 <div class="alert alert-danger">
-    <a href="{{route('admin.delete')}}" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <a href="{{route('admin.lista')}}" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <strong>Elimino!</strong> {{session('eliminar')}}
   </div>
 
 @endif
 </div>
 
-<div>
 <div class="col col-3 float-right shadow">
 @auth
 @if(auth()->user()->hasRol(['Administrador']))
-	<a href="{{route('admin.agregar')}}" class="btn btn-block btn-warning mb-3">Agregar Producto</a>
+	<a href="{{route('admin.agregar')}}" class="btn btn-block btn-warning mb-3"><i class="fas fa-plus text-light"></i>
+	 Agregar Producto</a>
 @endif
 @endauth
 	</div>
-	<table class="table">
+	<table class="table table-responsive-lg">
 		<thead class="table-dark">
 			<tr>
 				<th class="text-center" scope="col">Código</th>
@@ -74,13 +74,13 @@
 	<td class="text-center">{{$prod->categorias->nombre}}</td>
 	
 	<td class="text-center text-capitalize">{{$prod->created_at->diffforHumans()}}</td>
-	<td>
-	<a href="{{route('admin.detalle', $prod)}}" class="btn btn-info">Ver Detalle</a>
+	<td class="d-flex">
+	<a href="{{route('admin.detalle', $prod)}}" class="btn btn-sm btn-info mr-1"><i class="far fa-file-alt"></i> Ver Detalle</a>
 @auth
 @if(auth()->user()->hasRol(['Administrador']))
-	<a href="{{route('admin.editar', $prod)}}" class="btn btn-success">Editar</a>
+	<a href="{{route('admin.editar', $prod)}}" class="btn btn-sm btn-success mr-1"><i class="far fa-edit"></i> Editar</a>
 
-	<a href="{{route('admin.delete', $prod)}}" class="btn btn-danger" onclick="confirm('¿Desea Eliminar?')">Eliminar</a>
+	<a href="{{route('admin.delete', $prod)}}" class="btn btn-sm btn-danger" onclick="confirm('¿Desea Eliminar?')"><i class="fas fa-minus-circle"></i> Eliminar</a>
 @endif
 @endauth
 			</td>
@@ -89,20 +89,7 @@
 		</tbody>
 	</table>
 	{{$producto->links()}}
-<!--
-	<div class="card float-right" style="width: 40rem;">
-<div class="card-body badge-pill">
-<div class="d-flex justify-content-center">
-<div>
-<p class="card-text font-italic mr-4 border-bottom border-dark pb-2">Generar Reporte PDF de todo el registro de Productos</p>
-</div>
-	<a href="" class="btn btn-danger badge-pill">Obtener en PDF</a>
-
-</div>
-</div>
-</div>
--->
-</div>
+ 
 @stop
 
 @section('css')
@@ -116,9 +103,9 @@
 @stop 
 
 @section('js')
-<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 <!-- Bootstrap -->
-<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->

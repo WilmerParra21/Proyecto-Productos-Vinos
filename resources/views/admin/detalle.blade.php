@@ -6,13 +6,13 @@
 
 @section('content_header')
 
-<h1 class="text-center text-capitalize text-white p-2 shadow" style="background-color: darkred; font-family: Georgia, serif;">Detalle del Producto</h1>
+<h1 class="text-center text-capitalize text-white p-2 shadow bg-primary" style="font-family: Georgia, serif;">Detalle del Producto</h1>
 @stop
 
 @section('content')
 
-<div class="container-fluid border border-dark">
-
+<div class="container-fluid bg-white border border-dark">
+<div class="d-flex">
 <ul class="list-unstyled m-3">
 
 	<li class="">Nombre: <strong class="text-dark font-weight-bold">{{$producto->nombre_Prod}}</strong></li>
@@ -28,10 +28,13 @@
 	<li class=" text-capitalize mt-4">Fecha de Creación: <strong class="text-dark font-weight-bold">{{$producto->created_at}}</strong></li>
 
 	<li class="text-capitalize">Fecha de Actualización: <strong class="text-dark font-weight-bold">{{$producto->updated_at}}</strong></li>
+
 </ul>
 
-<div class="m-4 py-2">
-		<a href="{{route('admin.lista')}}" class="btn btn-outline-dark px-3">volver</a>
+<img src="{{asset(Storage::url($producto->imagen))}}" width="280" class="mt-2 mr-4 img-fluid" alt="Imagen-Vino">
+</div>
+<div class="ml-4 mb-4">
+		<a href="{{route('admin.lista')}}" class="btn btn-outline-dark px-4">Volver</a>
 	</div>
 	
 </div>
